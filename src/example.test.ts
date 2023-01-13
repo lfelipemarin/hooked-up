@@ -1,3 +1,7 @@
+/* eslint-disable object-curly-newline */
+/* eslint-disable import/no-extraneous-dependencies */
+import { assert, describe, expect, it } from 'vitest';
+
 describe('suite name', () => {
   it('foo', () => {
     assert.equal(Math.sqrt(4), 2);
