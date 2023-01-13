@@ -1,0 +1,50 @@
+.hu-icon-text {
+  width: min-content;
+  // span.hu-icon-border-bottom {
+  //   border-bottom: 2px solid gray;
+  //   content: '';
+  //   bottom: 0;
+  //   left: 0;
+  //   position: relative;
+  //   transition: transform 0.2s ease-in-out;
+  //   transform: scaleX(0);
+  //   display: block;
+  // }
+  // &--is-active {
+  //   span.hu-icon-border-bottom {
+  //     transform: scaleX(1);
+  //   }
+  // }
+}
+
+.hu-icon-border-bottom {
+  border-bottom: 2px solid gray;
+  content: '';
+  bottom: 0;
+  left: 0;
+  position: relative;
+  // transition: transform 0.2s ease-in-out;
+  // transform: scaleX(0);
+  display: block;
+  &--is-active-enter {
+    transform: scaleX(0);
+  }
+  &--is-active-enter-active {
+    transform: scaleX(1);
+    transition: transform 0.2s ease-in-out;
+  }
+  &--is-active-enter-done {
+    transform: scaleX(1);
+  }
+  &--is-active-exit {
+    transform: scaleX(1);
+    border-bottom: 2px solid red;
+  }
+  &--is-active-exit-active {
+    transform: scaleX(0);
+    transition: transform 0.2s ease-in-out;
+  }
+  &--is-active-exit-done {
+    transform: scaleX(0);
+  }
+}

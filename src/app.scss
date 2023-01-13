@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+$base-color-d: #4d4a4b;
+
+:root,
+::before,
+::after {
+  --hu-icon-text-active-color: $base-color-d;
+}
