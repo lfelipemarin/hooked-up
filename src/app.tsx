@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 
 import NavBar, { IconTextProperties } from './components/navbar/navbar.component';
 // import './icon-text-story-styles.scss';
@@ -48,12 +48,9 @@ const navItems: IconTextProperties[] = [
     text: 'Notifications'
   }
 ];
-const App: FC = () => {
-  const [state, setState] = useState(false);
-  return (
-    <div>
-      <NavBar navItems={navItems} />
-    </div>
-  );
-};
+const App: FC = () => (
+  <div>
+    <NavBar navItems={navItems} />
+  </div>
+);
 export default App;

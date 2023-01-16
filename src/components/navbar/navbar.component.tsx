@@ -38,7 +38,7 @@ export interface IconTextProperties {
    * Active class
    */
   isActive?: boolean
-  onClick?(id: Key, event_: MouseEvent<HTMLDivElement, MouseEvent>): void
+  onClick?: (id: Key, event_: MouseEvent) => void
 }
 
 export interface NavBarProperties {
@@ -50,7 +50,7 @@ export interface NavBarProperties {
 
 const NavBar: FC<NavBarProperties> = ({ navItems }) => {
   const [activeItems, setActiveItems] = useState(navItems);
-  const clickHandler = (itemId: Key, event_: MouseEvent<HTMLDivElement, MouseEvent>): void => {
+  const clickHandler = (itemId: Key, event_: MouseEvent): void => {
     event_.preventDefault();
     const items = [...activeItems];
     // eslint-disable-next-line no-restricted-syntax

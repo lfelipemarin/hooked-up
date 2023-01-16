@@ -29,7 +29,7 @@ const IconText: FC<IconTextProperties> = ({
   const { width, height } = style;
   const nodeReference = useRef(null);
   return (
-    <div className="hu-icon-text" onClick={(event_) => onClick(id, event_)} role="button" tabIndex={id as number} aria-hidden>
+    <div className="hu-icon-text" onClick={(event_) => onClick?.(id, event_)} role="button" tabIndex={id as number} aria-hidden>
       <a
         href={link}
         target={target}
