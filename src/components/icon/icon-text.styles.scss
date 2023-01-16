@@ -27,24 +27,24 @@
   // transform: scaleX(0);
   display: block;
   &--is-active-enter {
-    transform: scaleX(0);
+    transform: scaleX(0) !important;
   }
   &--is-active-enter-active {
-    transform: scaleX(1);
+    transform: scaleX(1) !important;
     transition: transform 0.2s ease-in-out;
   }
   &--is-active-enter-done {
-    transform: scaleX(1);
+    transform: scaleX(1) !important;
   }
   &--is-active-exit {
-    transform: scaleX(1);
+    transform: scaleX(1) !important;
     border-bottom: 2px solid red;
   }
   &--is-active-exit-active {
-    transform: scaleX(0);
+    transform: scaleX(0) !important;
     transition: transform 0.2s ease-in-out;
   }
   &--is-active-exit-done {
-    transform: scaleX(0);
+    transform: scaleX(0) !important;
   }
 }

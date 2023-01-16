@@ -1,60 +1,35 @@
 /* eslint-disable react/require-default-props */
 /* eslint-disable react/jsx-one-expression-per-line */
 import {
-  FC, SVGProps, useRef
+  FC, useEffect, useRef, useState
 } from 'react';
 import { CSSTransition } from 'react-transition-group';
+import { IconTextProperties } from '../navbar/navbar.component';
 import './icon-text.styles.scss';
-
-interface Style {
-  width: string,
-  height: string
-}
-
-interface IconTextProperties {
-  /**
-  * Icon in SVG format
-  */
-  Icon: FC<SVGProps<SVGSVGElement>>
-  /**
-   * Description text
-   */
-  text?: string
-  /**
-   * Link for the href
-   */
-  link?: string
-  /**
-   * Target for the "a" element
-   */
-  target?: string,
-  /**
-   * Styles applied to the SVG
-   */
-  style?: Style,
-  borderStyle?: object,
-  /**
-   * Active class
-   */
-  isActive?: boolean
-}
 
 /**
  * Icon with text description
- */
+*/
 const IconText: FC<IconTextProperties> = ({
+  id,
   Icon,
   text = 'test',
   link,
-  target = '_blank',
+  target = '_self',
   style = { width: '2em', height: '2em' },
   borderStyle = { borderBottom: '2px solid gray' },
-  isActive = false
+  isActive = false,
+  onClick
 }) => {
+  const [allStyles, setAllStyles] = useState({});
+  useEffect(() => {
+    setAllStyles({ transform: isActive ? 'scaleX(1)' : 'scaleX(0)', ...borderStyle });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   const { width, height } = style;
   const nodeReference = useRef(null);
   return (
-    <div className="hu-icon-text">
+    <div className="hu-icon-text" onClick={(event_) => onClick(id, event_)} role="button" tabIndex={id as number} aria-hidden>
       <a
         href={link}
         target={target}
@@ -68,7 +43,7 @@ const IconText: FC<IconTextProperties> = ({
         <span className="tw-text-center tw-text-xs tw-whitespace-nowrap">{text}</span>
       </a>
       <CSSTransition nodeRef={nodeReference} in={isActive} timeout={200} classNames="hu-icon-border-bottom--is-active">
-        <span ref={nodeReference} className="hu-icon-border-bottom" style={borderStyle} />
+        <span ref={nodeReference} className="hu-icon-border-bottom" style={allStyles} />
       </CSSTransition>
     </div>
   );

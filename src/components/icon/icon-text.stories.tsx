@@ -22,7 +22,7 @@ const Template: ComponentStory<typeof IconText> = (arguments_) => <IconText {...
 export const IconWithText = Template.bind({});
 IconWithText.args = {
   Icon: Logo,
-  isActive: true,
+  isActive: false,
   link: 'https://google.com',
   target: '_blank',
   text: 'Some text'
