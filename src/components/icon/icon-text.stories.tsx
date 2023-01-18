@@ -2,7 +2,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { ReactComponent as Logo } from '../../assets/react.svg';
-import './icon-text-story-styles.scss';
 import IconText from './icon-text.component';
 
 export default {

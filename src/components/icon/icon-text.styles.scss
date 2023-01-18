@@ -1,5 +1,9 @@
 .hu-icon-text {
   width: min-content;
+  a {
+    min-width: 80px;
+    max-width: 100px;
+  }
   // span.hu-icon-border-bottom {
   //   border-bottom: 2px solid gray;
   //   content: '';

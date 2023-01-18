@@ -16,7 +16,7 @@ const IconText: FC<IconTextProperties> = ({
   text = 'test',
   link,
   target = '_self',
-  style = { width: '2em', height: '2em' },
+  style = { width: '1.5em', height: '1.5em' },
   borderStyle = { borderBottom: '2px solid gray' },
   isActive = false,
   onClick
@@ -33,7 +33,7 @@ const IconText: FC<IconTextProperties> = ({
       <a
         href={link}
         target={target}
-        className="tw-flex tw-flex-col tw-gap-2 tw-w-fit tw-justify-center tw-items-center tw-p-2"
+        className="tw-flex tw-flex-col tw-w-fit tw-justify-center tw-items-center tw-p-2"
       >
         <Icon
           className="tw-max-w-xs"
