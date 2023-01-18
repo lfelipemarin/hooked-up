@@ -1,7 +1,9 @@
+/* eslint-disable react/require-default-props */
 import {
   FC, Key, MouseEvent, SVGProps, useState
 } from 'react';
 import IconText from '../icon/icon-text.component';
+import './navbar.styles.scss';
 
 export interface Style {
   width: string,
@@ -45,10 +47,11 @@ export interface NavBarProperties {
   /**
    * NavBar items
    */
-  navItems: IconTextProperties[]
+  navItems: IconTextProperties[],
+  className?: string
 }
 
-const NavBar: FC<NavBarProperties> = ({ navItems }) => {
+const NavBar: FC<NavBarProperties> = ({ navItems, className }) => {
   const [activeItems, setActiveItems] = useState(navItems);
   const clickHandler = (itemId: Key, event_: MouseEvent): void => {
     event_.preventDefault();
@@ -60,7 +63,7 @@ const NavBar: FC<NavBarProperties> = ({ navItems }) => {
     setActiveItems(items);
   };
   return (
-    <ul className="tw-flex">
+    <ul className={`tw-flex ${className}`}>
       {activeItems.map((navItem) => (
         <li key={navItem.id}>
           <IconText
