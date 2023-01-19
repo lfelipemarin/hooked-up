@@ -1,10 +1,18 @@
-import { FC } from 'react';
+/* eslint-disable import/no-extraneous-dependencies */
+import { FC, lazy } from 'react';
+import { Route, Routes } from 'react-router-dom';
 
-import Header from './components/header/header.component';
+const Navigation = lazy(() => import('./pages/navigation/navigation.page'));
+const Network = lazy(() => import('./pages/network/network.page'));
+const HomePage = lazy(() => import('./pages/home/home.page'));
 
 const App: FC = () => (
-  <main className="tw-container tw-mx-auto">
-    <Header className="tw-w-full" />
-  </main>
+  <Routes>
+    <Route path="/" element={<Navigation />}>
+      <Route index element={<HomePage />} />
+      <Route path="network" element={<Network />} />
+    </Route>
+  </Routes>
+
 );
 export default App;
