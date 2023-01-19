@@ -1,24 +1,13 @@
 .hu-icon-text {
   width: min-content;
   a {
+    min-height: 52px;
     min-width: 80px;
     max-width: 100px;
+    @media (max-width: 640px) {
+      min-width: 42px;
+    }
   }
-  // span.hu-icon-border-bottom {
-  //   border-bottom: 2px solid gray;
-  //   content: '';
-  //   bottom: 0;
-  //   left: 0;
-  //   position: relative;
-  //   transition: transform 0.2s ease-in-out;
-  //   transform: scaleX(0);
-  //   display: block;
-  // }
-  // &--is-active {
-  //   span.hu-icon-border-bottom {
-  //     transform: scaleX(1);
-  //   }
-  // }
 }
 
 .hu-icon-border-bottom {

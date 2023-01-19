@@ -1,0 +1,14 @@
+.hu-main-search-bar {
+  z-index: 0;
+  input {
+    padding: 0 0.8rem 0 40px;
+    width: 100%;
+  }
+  &--inner {
+    max-width: 280px;
+    transition: max-width 0.3s ease-out;
+    &-expanded {
+      max-width: 360px;
+    }
+  }
+}

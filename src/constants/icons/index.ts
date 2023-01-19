@@ -4,6 +4,8 @@ import { ReactComponent as Icon2 } from '../../stories/assets/colors.svg';
 import { ReactComponent as Icon3 } from '../../stories/assets/comments.svg';
 import { ReactComponent as Icon4 } from '../../stories/assets/direction.svg';
 import { ReactComponent as Icon5 } from '../../stories/assets/flow.svg';
+import { ReactComponent as Icon6 } from '../../stories/assets/plugin.svg';
+import { ReactComponent as Icon7 } from '../../stories/assets/repo.svg';
 
 const navItems: IconTextProperties[] = [
   {
@@ -42,6 +44,20 @@ const navItems: IconTextProperties[] = [
     isActive: false,
     link: '/notifications',
     text: 'Notifications'
+  },
+  {
+    Icon: Icon6,
+    id: 6,
+    isActive: false,
+    link: '/me',
+    text: 'Me'
+  },
+  {
+    Icon: Icon7,
+    id: 7,
+    isActive: false,
+    link: '/work',
+    text: 'Work'
   }
 ];
 

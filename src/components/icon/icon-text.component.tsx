@@ -33,17 +33,17 @@ const IconText: FC<IconTextProperties> = ({
       <a
         href={link}
         target={target}
-        className="tw-flex tw-flex-col tw-w-fit tw-justify-center tw-items-center tw-p-2"
+        className="tw-flex tw-flex-col tw-w-fit tw-justify-center tw-items-center"
       >
         <Icon
           className="tw-max-w-xs"
           width={width}
           height={height}
         />
-        <span className="tw-text-center tw-text-xs tw-whitespace-nowrap">{text}</span>
+        <span className="tw-text-center tw-text-xs tw-whitespace-nowrap sm:tw-block xs:tw-hidden">{text}</span>
       </a>
       <CSSTransition nodeRef={nodeReference} in={isActive} timeout={200} classNames="hu-icon-border-bottom--is-active">
-        <span ref={nodeReference} className="hu-icon-border-bottom" style={allStyles} />
+        <span ref={nodeReference} className="hu-icon-border-bottom sm:tw-block xs:tw-hidden" style={allStyles} />
       </CSSTransition>
     </div>
   );
