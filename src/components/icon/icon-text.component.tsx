@@ -3,6 +3,7 @@
 import {
   FC, useEffect, useRef, useState
 } from 'react';
+import { Link } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 import { IconTextProperties } from '../navbar/navbar.component';
 import './icon-text.styles.scss';
@@ -14,7 +15,7 @@ const IconText: FC<IconTextProperties> = ({
   id,
   Icon,
   text = 'test',
-  link,
+  link = '',
   target = '_self',
   style = { width: '1.5em', height: '1.5em' },
   borderStyle = { borderBottom: '2px solid gray' },
@@ -30,10 +31,10 @@ const IconText: FC<IconTextProperties> = ({
   const nodeReference = useRef(null);
   return (
     <div className="hu-icon-text" onClick={(event_) => onClick?.(id, event_)} role="button" tabIndex={id as number} aria-hidden>
-      <a
-        href={link}
-        target={target}
+      <Link
+        to={link}
         className="tw-flex tw-flex-col tw-w-fit tw-justify-center tw-items-center"
+        target={target}
       >
         <Icon
           className="tw-max-w-xs"
@@ -41,7 +42,7 @@ const IconText: FC<IconTextProperties> = ({
           height={height}
         />
         <span className="tw-text-center tw-text-xs tw-whitespace-nowrap sm:tw-block xs:tw-hidden">{text}</span>
-      </a>
+      </Link>
       <CSSTransition nodeRef={nodeReference} in={isActive} timeout={200} classNames="hu-icon-border-bottom--is-active">
         <span ref={nodeReference} className="hu-icon-border-bottom sm:tw-block xs:tw-hidden" style={allStyles} />
       </CSSTransition>

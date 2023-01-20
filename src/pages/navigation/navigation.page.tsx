@@ -5,7 +5,7 @@ import Header from '../../components/header/header.component';
 
 const Navigation: FC = () => (
   <>
-    <div className="md:tw-container tw-mx-auto md:tw-px-16">
+    <div className="tw-border-b-gray-200 tw-border-solid tw-border-b">
       <Header className="tw-w-full" />
     </div>
     <main className="tw-container tw-mx-auto">

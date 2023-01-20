@@ -1,7 +1,9 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/require-default-props */
 import {
-  FC, Key, MouseEvent, SVGProps, useState
+  FC, Key, MouseEvent, SVGProps, useEffect, useState
 } from 'react';
+import { useLocation } from 'react-router-dom';
 import IconText from '../icon/icon-text.component';
 import './navbar.styles.scss';
 
@@ -52,16 +54,16 @@ export interface NavBarProperties {
 }
 
 const NavBar: FC<NavBarProperties> = ({ navItems, className }) => {
+  const { pathname } = useLocation();
   const [activeItems, setActiveItems] = useState(navItems);
-  const clickHandler = (itemId: Key, event_: MouseEvent): void => {
-    event_.preventDefault();
+  useEffect(() => {
     const items = [...activeItems];
     // eslint-disable-next-line no-restricted-syntax
     for (const item of items) {
-      item.isActive = itemId === item.id;
+      item.isActive = item.link === pathname;
     }
     setActiveItems(items);
-  };
+  }, [pathname]);
   return (
     <ul className={`tw-flex ${className}`}>
       {activeItems.map((navItem) => (
@@ -73,7 +75,6 @@ const NavBar: FC<NavBarProperties> = ({ navItems, className }) => {
             link={navItem.link}
             text={navItem.text}
             target={navItem.target}
-            onClick={clickHandler}
           />
         </li>
       ))}

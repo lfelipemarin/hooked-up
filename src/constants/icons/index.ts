@@ -20,7 +20,7 @@ const navItems: IconTextProperties[] = [
     Icon: Icon2,
     id: 2,
     isActive: false,
-    link: '/my-network',
+    link: '/mynetwork',
     target: '_self',
     text: 'My Network'
   },
