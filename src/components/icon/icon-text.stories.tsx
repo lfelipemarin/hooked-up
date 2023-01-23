@@ -1,11 +1,13 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
+/* eslint-disable import/no-extraneous-dependencies */
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { withRouter } from 'storybook-addon-react-router-v6';
 
 import { ReactComponent as Logo } from '../../assets/react.svg';
 import IconText from './icon-text.component';
 
 export default {
   component: IconText,
+  decorators: [withRouter],
   title: 'Example/Icon Button'
 } as ComponentMeta<typeof IconText>;
 
@@ -21,8 +23,9 @@ const Template: ComponentStory<typeof IconText> = (arguments_) => <IconText {...
 export const IconWithText = Template.bind({});
 IconWithText.args = {
   Icon: Logo,
+  id: 1,
   isActive: false,
-  link: 'https://google.com',
-  target: '_blank',
+  link: '/home',
+  target: '_self',
   text: 'Some text'
 };
