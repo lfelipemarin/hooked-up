@@ -25,6 +25,7 @@ module.exports = {
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
+    'storybook-addon-react-router-v6',
     {
       name: 'storybook-addon-sass-postcss',
       options: {
