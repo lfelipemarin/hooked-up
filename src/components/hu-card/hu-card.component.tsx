@@ -6,10 +6,13 @@ interface CardProperties {
   cardHeader?: ReactElement
   cardBody?: ReactElement
   cardFooter?: ReactElement
+  className?: string
 }
 
-const HuCard: FC<CardProperties> = ({ cardHeader, cardBody, cardFooter }) => (
-  <div className="hu-card tw-border-none tw-p-0 tw-m-0">
+const HuCard: FC<CardProperties> = ({
+  cardHeader, cardBody, cardFooter, className = ''
+}) => (
+  <div className={`hu-card tw-border-none tw-p-0 tw-m-0 ${className}`}>
     {cardHeader}
     {cardBody}
     {cardFooter}

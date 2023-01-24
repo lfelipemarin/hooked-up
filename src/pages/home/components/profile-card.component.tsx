@@ -9,7 +9,7 @@ import RoundImage from '../../../components/round-image/round-image.component';
 import './profile-card.styles.scss';
 
 const CardHeader: FC = () => (
-  <header className="hu-card-header hu-profile-info tw-p-3">
+  <header className="hu-profile-card-header hu-profile-info tw-p-3">
     <div className="bg-section tw-bg-cover tw-bg-center" />
     <Link to="/me" className="tw-block hover:tw-underline hover:tw-text-purple-500">
       <div className="profile-pic-section tw-p-0 tw-m-0">
@@ -20,10 +20,10 @@ const CardHeader: FC = () => (
   </header>
 );
 const CardBody: FC = () => (
-  <main className="hu-card-main tw-px-3 tw-mb-3">
+  <main className="hu-profile-card-main tw-px-3 tw-mb-3">
     <ul className="tw-flex tw-flex-col tw-gap-2">
       <li>
-        <Link to="/me" className="tw-text-xs tw-font-semibold hover:tw-bg-opacity-5">
+        <Link to="/me" className="tw-text-xs tw-font-semibold">
           <div className="tw-flex">
             <div className="tw-flex-grow">
               <span className="tw-text-gray-600">Who's viewed your profile</span>
@@ -50,7 +50,7 @@ const CardBody: FC = () => (
   </main>
 );
 const CardFooter: FC = () => (
-  <footer className="hu-card-footer tw-flex tw-flex-col tw-text-xs">
+  <footer className="hu-profile-card-footer tw-flex tw-flex-col tw-text-xs">
     <Link to="/premium" className="hover:tw-text-blue-600 tw-p-3">
       <span className="tw-text-gray-600">Access exclusive tools & insights</span>
       <div className="tw-flex tw-items-center tw-gap-1">

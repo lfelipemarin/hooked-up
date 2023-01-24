@@ -3,7 +3,7 @@ import { FC, ReactElement } from 'react';
 import './main.layout.styles.scss';
 
 interface MainLayoutProperties {
-  SectionLeft?: ReactElement
+  SectionLeft?: ReactElement[]
   SectionCenter?: ReactElement
   SectionRight?: ReactElement
   /**

@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import MainLayout from '../main.layout';
+import CommunityCard from './components/community-card.component';
 import ProfileCard from './components/profile-card.component';
 
 const SectionCenter: FC = () => (
@@ -11,7 +12,7 @@ const SectionRight: FC = () => (
 
 const HomePage: FC = () => (
   <MainLayout
-    SectionLeft={<ProfileCard />}
+    SectionLeft={[<ProfileCard key={0} />, <CommunityCard key={1} />]}
     SectionCenter={<SectionCenter />}
     SectionRight={<SectionRight />}
   />

@@ -1,5 +1,5 @@
 .hu-card {
-  .hu-card-header {
+  .hu-profile-card-header {
     .bg-section {
       background-image: url('https://static.licdn.com/sc/h/55k1z8997gh8dwtihm11aajyq');
       height: 56.25px;
@@ -12,8 +12,8 @@
       }
     }
   }
-  .hu-card-main,
-  .hu-card-footer {
+  .hu-profile-card-main,
+  .hu-profile-card-footer {
     a {
       display: block;
       &:hover {
