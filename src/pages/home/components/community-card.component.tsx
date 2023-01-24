@@ -3,7 +3,6 @@ import { FC, ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { ReactComponent as PlusSign } from '../../../assets/plus-sign.svg';
 import HuCard from '../../../components/hu-card/hu-card.component';
-import './community-card.styles.scss';
 
 const links = [
   {

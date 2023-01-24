@@ -7,7 +7,12 @@ import { ReactComponent as Icon5 } from '../../stories/assets/flow.svg';
 import { ReactComponent as Icon6 } from '../../stories/assets/plugin.svg';
 import { ReactComponent as Icon7 } from '../../stories/assets/repo.svg';
 
-const navItems: IconTextProperties[] = [
+import { ReactComponent as IconArticle } from '../../assets/article.svg';
+import { ReactComponent as IconJob } from '../../assets/job.svg';
+import { ReactComponent as IconPhoto } from '../../assets/photo.svg';
+import { ReactComponent as IconVideo } from '../../assets/video.svg';
+
+export const navItems: IconTextProperties[] = [
   {
     Icon: Icon1,
     id: 1,
@@ -61,4 +66,4 @@ const navItems: IconTextProperties[] = [
   }
 ];
 
-export default navItems;
+export const iconButtons = [IconPhoto, IconVideo, IconJob, IconArticle];
