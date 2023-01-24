@@ -1,6 +1,19 @@
 .hu-main-layout {
-  grid-template-areas: 'sidebar main aside';
-  grid-template-columns: minmax(0, 5fr) minmax(0, 12fr) minmax(300px, 7fr);
+  grid-template-areas:
+    'sidebar'
+    'main'
+    'aside';
+  @media (min-width: 768px) {
+    grid-template-areas:
+      'sidebar main'
+      '. aside';
+    grid-template-columns: minmax(0, 7fr) minmax(0, 17fr);
+  }
+  @media (min-width: 992px) {
+    grid-template-areas: 'sidebar main aside';
+    grid-template-columns: minmax(0, 5fr) minmax(0, 12fr) minmax(300px, 7fr);
+  }
+  // grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   column-gap: 1.5em;
   grid-template-rows: auto;
   row-gap: 1em;

@@ -9,16 +9,10 @@ interface CardProperties {
 }
 
 const HuCard: FC<CardProperties> = ({ cardHeader, cardBody, cardFooter }) => (
-  <div className="hu-card">
-    <header className="hu-card-header">
-      {cardHeader}
-    </header>
-    <main>
-      {cardBody}
-    </main>
-    <footer>
-      {cardFooter}
-    </footer>
+  <div className="hu-card tw-border-none tw-p-0 tw-m-0">
+    {cardHeader}
+    {cardBody}
+    {cardFooter}
   </div>
 );
 export default HuCard;

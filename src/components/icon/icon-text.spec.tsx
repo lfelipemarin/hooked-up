@@ -3,7 +3,7 @@
 import { MemoryRouter } from 'react-router-dom';
 import TestRenderer from 'react-test-renderer';
 import { describe, expect, it } from 'vitest';
-import navItems from '../../constants/icons';
+import { navItems } from '../../constants';
 import IconText from './icon-text.component';
 
 describe('Render Icon text button', () => {

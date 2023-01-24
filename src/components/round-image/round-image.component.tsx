@@ -18,7 +18,8 @@ interface RoundImageProperties {
   /**
    * Border color
    */
-  borderColor?: string
+  border?: string
+  className?: string
 }
 
 /**
@@ -27,9 +28,9 @@ interface RoundImageProperties {
  * @returns RoundImage component
  */
 const RoundImage: FC<RoundImageProperties> = ({
-  imagePath, alt, imageWidth = '64', borderColor = 'white'
+  imagePath, alt, imageWidth = '72', border, className
 }) => (
-  <img src={imagePath} aria-label={alt} width={imageWidth} className="hu-round-image" style={{ borderColor }} />
+  <img src={imagePath} aria-label={alt} width={imageWidth} height={imageWidth} className={`hu-round-image ${className}`} style={{ border }} />
 );
 
 export default RoundImage;

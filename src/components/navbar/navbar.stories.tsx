@@ -4,7 +4,7 @@ import { withRouter } from 'storybook-addon-react-router-v6';
 
 import NavBar from './navbar.component';
 
-import navItems from '../../constants/icons';
+import { navItems } from '../../constants';
 
 export default {
   component: NavBar,
