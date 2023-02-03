@@ -3,9 +3,9 @@ import { FC, ReactElement } from 'react';
 import './main.layout.styles.scss';
 
 interface MainLayoutProperties {
-  SectionLeft?: ReactElement[]
-  SectionCenter?: ReactElement
-  SectionRight?: ReactElement
+  SectionLeft?: ReactElement | ReactElement[]
+  SectionCenter?: ReactElement | ReactElement[]
+  SectionRight?: ReactElement | ReactElement[]
   /**
    * Number of colums for the layout.
    * Supported values:

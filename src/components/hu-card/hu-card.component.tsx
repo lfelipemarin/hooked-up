@@ -3,9 +3,9 @@ import { FC, ReactElement } from 'react';
 import './hu-card.styles.scss';
 
 interface CardProperties {
-  cardHeader?: ReactElement
-  cardBody?: ReactElement
-  cardFooter?: ReactElement
+  cardHeader?: ReactElement | ReactElement[]
+  cardBody?: ReactElement | ReactElement[]
+  cardFooter?: ReactElement | ReactElement[]
   className?: string
 }
 
