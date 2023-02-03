@@ -1,1 +1,1 @@
-export { iconButtons, navItems } from './icons/icons';
+export { iconPostButtons, navItems } from './icons/icons';

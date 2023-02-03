@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
-import { FC, ReactNode } from 'react';
+import { FC, ReactElement, ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { ReactComponent as PlusSign } from '../../../assets/plus-sign.svg';
 import HuCard from '../../../components/hu-card/hu-card.component';
@@ -22,7 +22,7 @@ const links = [
   }
 ];
 
-const renderLiItems = (): ReactNode[] => links.map(({ key, text, to }) => {
+const renderLiItems = (): ReactElement[] => links.map(({ key, text, to }) => {
   let plusSign: ReactNode;
   if (text === 'Events') {
     // eslint-disable-next-line no-console

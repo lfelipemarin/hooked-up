@@ -66,4 +66,25 @@ export const navItems: IconTextProperties[] = [
   }
 ];
 
-export const iconButtons = [IconPhoto, IconVideo, IconJob, IconArticle];
+export const iconPostButtons = [
+  {
+    Icon: IconPhoto,
+    iconColor: '#378fe9',
+    label: 'Photo'
+  },
+  {
+    Icon: IconVideo,
+    iconColor: '#5f9b41',
+    label: 'Video'
+  },
+  {
+    Icon: IconJob,
+    iconColor: 'purple',
+    label: 'Job'
+  },
+  {
+    Icon: IconArticle,
+    iconColor: 'orange',
+    label: 'Write Article'
+  }
+];
