@@ -26,7 +26,7 @@ const MainLayout: FC<MainLayoutProperties> = ({
   const leftClass = left && columns === 2 ? `hu-main-layout--${columns}-cols-left` : '';
   return (
     <div className={`hu-main-layout hu-main-layout--${columns}-cols ${leftClass} tw-grid`}>
-      <section className="hu-main-section-left hu-left-sidebar">
+      <section className="hu-main-section-left hu-left-sidebar tw-sticky tw-top-2">
         {SectionLeft}
       </section>
       <section className="hu-main-section-center hu-center-main">
