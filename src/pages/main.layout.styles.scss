@@ -19,18 +19,13 @@
   row-gap: 1em;
   .hu-left-sidebar {
     grid-area: sidebar;
-    height: 40em;
-    // border: 1px solid red;
   }
   .hu-center-main {
     grid-area: main;
-    // border: 1px solid green;
-    // grid-column: 2 / span 2;
   }
   .hu-right-aside {
     grid-area: aside;
     border: 1px solid blue;
-    // display: none;
   }
   &--2-cols {
     .hu-center-main {

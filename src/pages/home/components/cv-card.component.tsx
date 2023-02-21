@@ -1,25 +1,11 @@
 /* eslint-disable react/require-default-props */
 import { FC, ReactElement } from 'react';
-import ProfileImage from '../../../assets/my-profile-image.jpeg';
 import HuCard from '../../../components/hu-card/hu-card.component';
-import RoundImage from '../../../components/round-image/round-image.component';
 
 import { cVData } from '../../../constants';
 import { DataType } from '../../../constants/mock/data';
 
 type CardBodyInfo = Omit<DataType, 'name' | 'phone' | 'linkedInUrl' | 'githubUrl'>
-
-const CardHeader = ({ name, careerTitles }: { name: string, careerTitles?: Array<string> }): ReactElement => (
-  <div className="tw-flex tw-items-center tw-gap-2">
-    <RoundImage imagePath={ProfileImage} alt="Profile Image" imageWidth="48" />
-    <div className="tw-flex tw-flex-col">
-      <p className="tw-text-sm tw-font-semibold">{name}</p>
-      <p className="tw-text-xs">
-        {careerTitles?.join(',')}
-      </p>
-    </div>
-  </div>
-);
 
 const filteredSkillSet = (skill: string): string => {
   switch (skill) {
@@ -79,16 +65,10 @@ const CardBody = ({ data }: { data: CardBodyInfo }): ReactElement => {
 const CvCard: FC = () => (
   <>
     {cVData.map((cv) => {
-      const { name, id, careerTitles } = cv;
+      const { id } = cv;
       const data: CardBodyInfo = cv;
       return (
         <HuCard
-          cardHeader={(
-            <CardHeader
-              name={name}
-              careerTitles={careerTitles}
-            />
-          )}
           cardBody={<CardBody data={data} />}
           key={id}
           className="tw-flex tw-flex-col tw-gap-2 tw-p-3 tw-mt-2"

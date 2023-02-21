@@ -5,10 +5,10 @@ import Header from '../../components/header/header.component';
 
 const Navigation: FC = () => (
   <>
-    <div>
-      <Header className="tw-w-full" />
-    </div>
-    <main className="lg:tw-container tw-mx-auto md:tw-px-16 tw-mt-5">
+    <Header className="tw-mx-auto md:tw-px-16 tw-fixed tw-w-screen tw-top-0 tw-z-10 tw-bg-white
+     tw--translate-x-1/2 tw-left-1/2 tw-border tw-border-solid tw-border-b-gray-300"
+    />
+    <main className="lg:tw-container tw-mx-auto md:tw-px-16 tw-mt-20">
       <Outlet />
     </main>
   </>

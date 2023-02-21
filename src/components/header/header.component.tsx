@@ -11,16 +11,14 @@ interface HeaderProperties {
 }
 
 const Header: FC<HeaderProperties> = ({ className }) => (
-  <div className="lg:tw-container tw-mx-auto md:tw-px-16">
-    <header className={`${className}`}>
-      <div className="tw-flex tw-items-center">
-        <div className="hu-nav-logo tw-flex">
-          <Logo width="24" height="24" />
-        </div>
-        <SearchBar />
-        <NavBar navItems={navItems} />
+  <header className={`${className}`}>
+    <div className="lg:tw-container xl:tw-px-20 tw-px-2 tw-flex tw-items-center">
+      <div className="hu-nav-logo tw-flex">
+        <Logo width="24" height="24" />
       </div>
-    </header>
-  </div>
+      <SearchBar />
+      <NavBar navItems={navItems} />
+    </div>
+  </header>
 );
 export default Header;
