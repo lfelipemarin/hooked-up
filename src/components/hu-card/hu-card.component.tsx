@@ -4,7 +4,7 @@ import './hu-card.styles.scss';
 
 interface CardProperties {
   cardHeader?: ReactElement | ReactElement[]
-  cardBody?: ReactElement | ReactElement[]
+  cardBody?: string | ReactElement | ReactElement[]
   cardFooter?: ReactElement | ReactElement[]
   className?: string
 }

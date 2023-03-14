@@ -12,7 +12,7 @@ interface Institution {
   location?: LocationType;
 }
 
-interface WorkType extends Institution {
+export interface WorkType extends Institution {
   position: string;
 }
 
@@ -20,7 +20,7 @@ interface EducationType extends Institution {
   career: string;
 }
 
-interface PersonalProjectType extends Institution {
+export interface PersonalProjectType extends Institution {
   projectName: string;
 }
 export interface DataType {
@@ -43,7 +43,7 @@ export interface DataType {
 
 export const cVData: Array<DataType> = [
   {
-    careerTitles: ['Senior Front End Developer'],
+    careerTitles: ['Senior Front End Developer', 'test'],
     education: [
       {
         career: 'BS Systems & Computer Engineering',
@@ -89,14 +89,15 @@ export const cVData: Array<DataType> = [
         * Generate standardized information and indicators to
         perform closer monitoring to patients.
         * Java desktop app, integration with MySQL`,
-        endDate: '01-01-2021',
+        endDate: '01-01-2012',
         name: 'Neurological Institute of Colombia',
-        projectName: 'Java Desktop App'
+        projectName:
+          'Software Development Java Desktop App - Neurological Clinical Reports'
       },
       {
         description: `* Web app made with Vue.js, deployed to Firebase and
         Heroku`,
-        endDate: '01-01-2012',
+        endDate: '01-01-2021',
         name: 'Personal Venture',
         projectName: 'Lectio Divina PWA'
       }
@@ -155,7 +156,7 @@ export const cVData: Array<DataType> = [
     ]
   },
   {
-    careerTitles: ['Senior Front End Developer'],
+    careerTitles: ['Senior Front End Developer', 'test'],
     education: [
       {
         career: 'BS Systems & Computer Engineering',
