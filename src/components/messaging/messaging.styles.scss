@@ -1,0 +1,5 @@
+.hu-messaging.is-minimized {
+  &.is-minimized {
+    transform: translateY(100%) translateY(-48px);
+  }
+}
