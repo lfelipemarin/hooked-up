@@ -19,25 +19,16 @@
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
-  "plugins": [
-    "react",
-    "@typescript-eslint",
-    "react-hooks",
-    "unicorn"
-  ],
+  "plugins": ["react", "@typescript-eslint", "react-hooks", "unicorn"],
   "rules": {
+    "no-plusplus": "off",
     "no-use-before-define": "off",
-    "@typescript-eslint/no-use-before-define": [
-      "error"
-    ],
+    "@typescript-eslint/no-use-before-define": ["error"],
     "react/react-in-jsx-scope": "off",
     "react/jsx-filename-extension": [
       "warn",
       {
-        "extensions": [
-          ".tsx",
-          ".js"
-        ]
+        "extensions": [".tsx", ".js"]
       }
     ],
     "import/extensions": [
@@ -49,9 +40,7 @@
       }
     ],
     "no-shadow": "off",
-    "@typescript-eslint/no-shadow": [
-      "error"
-    ],
+    "@typescript-eslint/no-shadow": ["error"],
     "@typescript-eslint/explicit-function-return-type": [
       "error",
       {
@@ -73,24 +62,17 @@
       }
     ],
     "import/prefer-default-export": "off",
-    "comma-dangle": [
-      "error",
-      "never"
-    ],
+    "comma-dangle": ["error", "never"],
     "import/no-unresolved": [
       "error",
       {
-        "ignore": [
-          "^react$"
-        ]
+        "ignore": ["^react$"]
       }
     ],
     "import/no-extraneous-dependencies": [
       "error",
       {
-        "devDependencies": [
-          "src/stories/**/*.stories.tsx"
-        ]
+        "devDependencies": ["src/stories/**/*.stories.tsx"]
       }
     ],
     "no-multiple-empty-lines": "error",
