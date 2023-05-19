@@ -77,7 +77,7 @@
     ],
     "no-multiple-empty-lines": "error",
     "sort-keys": [
-      "error",
+      "warn",
       "asc",
       {
         "caseSensitive": true,
