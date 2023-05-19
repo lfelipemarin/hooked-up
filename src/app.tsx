@@ -21,7 +21,8 @@ for (let index = 0; index < 20; index++) {
     profileImage={profileImage}
     name="Joe Doe"
     date="Mar 16"
-    lastMessagePreview="I understand this is a message preview I understand this is a message preview I understand this is a message preview I understand this is a message preview"
+    lastMessagePreview="I understand this is a message preview I understand this is a message
+    preview I understand this is a message preview I understand this is a message preview"
   />);
 }
 

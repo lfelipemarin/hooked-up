@@ -20,7 +20,7 @@ const UserMessagingItem: FC<UserMessagingItemProperties> = ({
         <span className="tw-text-xs">{date}</span>
       </div>
       <div className="tw-flex">
-        <span className="hu-message-item--preview tw-text-xs tw-overflow-hidden tw-whitespace-nowrap tw-text-ellipsis">{lastMessagePreview}</span>
+        <span className="hu-message-item--preview tw-text-xs tw-overflow-hidden tw-text-ellipsis">{lastMessagePreview}</span>
         <div className="tw-flex-50" />
       </div>
     </div>
