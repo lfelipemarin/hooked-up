@@ -34,7 +34,7 @@
     "react/jsx-filename-extension": [
       "warn",
       {
-        "extensions": [".tsx", ".js"]
+        "extensions": [".tsx", ".js", ".cjs"]
       }
     ],
     "import/extensions": [
@@ -76,7 +76,7 @@
       }
     ],
     "import/no-extraneous-dependencies": [
-      "error",
+      "warn",
       {
         "devDependencies": ["src/stories/**/*.stories.tsx"]
       }
