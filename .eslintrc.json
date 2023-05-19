@@ -21,6 +21,12 @@
   },
   "plugins": ["react", "@typescript-eslint", "react-hooks", "unicorn"],
   "rules": {
+    "react/require-default-props": [
+      "warn",
+      {
+        "functions": "ignore"
+      }
+    ],
     "no-plusplus": "off",
     "no-use-before-define": "off",
     "@typescript-eslint/no-use-before-define": ["error"],
