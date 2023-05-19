@@ -1,3 +1,4 @@
+/* eslint-disable sort-keys */
 import {
   mdiChevronDown, mdiChevronUp, mdiDotsHorizontal, mdiSquareEditOutline
 } from '@mdi/js';
@@ -5,15 +6,23 @@ import Icon from '@mdi/react';
 import {
   FC,
   KeyboardEvent,
+  ReactNode,
   useState
 } from 'react';
-import profileImage from '../../assets/my-profile-image.jpeg';
 import IconButton from '../icon-button/icon-button.component';
 import RoundImage from '../round-image/round-image.component';
-import UserMessagingItem from './components/user-messaging-item.component';
 import './messaging.styles.scss';
 
-const Messaging: FC = () => {
+interface MessagingProperties {
+  headerImage: string,
+  title: string,
+  messageItems: ReactNode[],
+  className?: string
+}
+
+const Messaging: FC<MessagingProperties> = ({
+  headerImage, title, messageItems, className
+}) => {
   const [state, setState] = useState(
     {
       expanded: false
@@ -34,12 +43,12 @@ const Messaging: FC = () => {
   const buttonData = [
     {
       icon: mdiDotsHorizontal,
-      actionMouse: expand,
+      actionMouse: (): void => { console.log('options'); },
       actionKeyboard: expandKeyboard
     },
     {
       icon: mdiSquareEditOutline,
-      actionMouse: expand,
+      actionMouse: (): void => { console.log('new message'); },
       actionKeyboard: expandKeyboard
     },
     {
@@ -48,22 +57,29 @@ const Messaging: FC = () => {
       actionKeyboard: expandKeyboard
     }
   ];
-  const mockMessagingItems = [];
-  for (let index = 0; index < 20; index++) {
-    mockMessagingItems.push(<UserMessagingItem key={index} />);
-  }
+
   return (
     <div
-      className={`hu-messaging hu-card tw-border-b-0 tw-rounded-b-none tw-flex tw-flex-col tw-gap-2 tw-fixed tw-bottom-0 tw-right-0 tw-p-2
-  tw-cursor-pointer tw-w-72 tw-bg-white ${expanded ? 'tw-translate-y-0' : 'is-minimized'} tw-transition-all tw-ease-in tw-duration-200`}
-      onClick={expand}
-      onKeyDown={expandKeyboard}
-      role="button"
-      tabIndex={0}
+      className={
+        `hu-messaging hu-card tw-border-b-0 tw-rounded-b-none tw-flex
+        tw-flex-col tw-gap-2 tw-fixed tw-bottom-0 tw-right-0 tw-p-2
+        tw-pt-0 tw-bg-white ${expanded ? 'tw-translate-y-0' : 'is-minimized'}
+        tw-transition-all tw-ease-in tw-duration-200 ${className}`
+      }
     >
-      <header className="tw-flex tw-gap-2 tw-items-center">
-        <RoundImage imagePath={profileImage} imageWidth="32" alt="Image Felipe Marin" />
-        <span className="tw-text-sm tw-font-semibold tw-flex-grow">Messaging</span>
+      <header
+        className="tw-flex tw-gap-2 tw-items-center tw-sticky tw-top-0 tw-p-2 tw-cursor-pointer"
+      >
+        <section
+          className="tw-flex tw-items-center tw-gap-2 tw-flex-1"
+          onClick={expand}
+          onKeyDown={expandKeyboard}
+          role="button"
+          tabIndex={0}
+        >
+          <RoundImage imagePath={headerImage} imageWidth="32" alt="Image Felipe Marin" />
+          <span className="tw-text-sm tw-font-semibold tw-flex-grow">{title}</span>
+        </section>
         <section className="tw-flex tw-items-center">
           {buttonData.map(({ icon, actionMouse }) => (
             <IconButton
@@ -77,8 +93,8 @@ const Messaging: FC = () => {
           ))}
         </section>
       </header>
-      <main>
-        {mockMessagingItems}
+      <main className="tw-flex tw-flex-col tw-gap-2 tw-relative tw-overflow-y-auto tw-overflow-x-hidden">
+        {messageItems}
       </main>
     </div>
   );

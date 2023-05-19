@@ -3,3 +3,8 @@
     transform: translateY(100%) translateY(-48px);
   }
 }
+.hu-message-item {
+  &--info {
+    width: calc(100% - 55px);
+  }
+}

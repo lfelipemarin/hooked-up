@@ -1,9 +1,11 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import {
-  FC, lazy, Suspense
+  FC, lazy, ReactNode, Suspense
 } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
+import profileImage from './assets/my-profile-image.jpeg';
 import Header from './components/header/header.component';
+import UserMessagingItem from './components/messaging/components/user-messaging-item.component';
 import Messaging from './components/messaging/messaging.component';
 
 const Network = lazy(() => import('./pages/network/network.page'));
@@ -11,6 +13,17 @@ const HomePage = lazy(() => import('./pages/home/home.page'));
 const JobsPage = lazy(() => import('./pages/jobs/jobs.page'));
 const MessagingPage = lazy(() => import('./pages/messaging/messaging.page'));
 const NotificationsPage = lazy(() => import('./pages/notifications/notifications.page'));
+
+const mockMessagingItems: ReactNode[] = [];
+for (let index = 0; index < 20; index++) {
+  mockMessagingItems.push(<UserMessagingItem
+    key={index}
+    profileImage={profileImage}
+    name="Joe Doe"
+    date="Mar 16"
+    lastMessagePreview="I understand this is a message preview I understand this is a message preview I understand this is a message preview I understand this is a message preview"
+  />);
+}
 
 const App: FC = () => (
   <>
@@ -37,7 +50,7 @@ const App: FC = () => (
         </Routes>
       </Suspense>
     </main>
-    <Messaging />
+    <Messaging headerImage={profileImage} title="Messaging" messageItems={mockMessagingItems} className="tw-max-h-256 tw-w-80" />
   </>
 );
 export default App;
