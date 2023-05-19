@@ -4,7 +4,7 @@ import {
 import Icon from '@mdi/react';
 import {
   FC,
-  SyntheticEvent,
+  KeyboardEvent,
   useState
 } from 'react';
 import profileImage from '../../assets/my-profile-image.jpeg';
@@ -21,7 +21,10 @@ const Messaging: FC = () => {
   );
   const { expanded } = state;
 
-  const expand = (event: SyntheticEvent): void => {
+  const expand = (): void => {
+    setState({ ...state, expanded: !expanded });
+  };
+  const expandKeyboard = (event: KeyboardEvent<HTMLDivElement>): void => {
     if (event.type === 'keydown' && event.key && event.key !== 'Enter') {
       return;
     }
@@ -31,15 +34,18 @@ const Messaging: FC = () => {
   const buttonData = [
     {
       icon: mdiDotsHorizontal,
-      action: expand
+      actionMouse: expand,
+      actionKeyboard: expandKeyboard
     },
     {
       icon: mdiSquareEditOutline,
-      action: expand
+      actionMouse: expand,
+      actionKeyboard: expandKeyboard
     },
     {
       icon: expanded ? mdiChevronDown : mdiChevronUp,
-      action: expand
+      actionMouse: expand,
+      actionKeyboard: expandKeyboard
     }
   ];
   const mockMessagingItems = [];
@@ -51,7 +57,7 @@ const Messaging: FC = () => {
       className={`hu-messaging hu-card tw-border-b-0 tw-rounded-b-none tw-flex tw-flex-col tw-gap-2 tw-fixed tw-bottom-0 tw-right-0 tw-p-2
   tw-cursor-pointer tw-w-72 tw-bg-white ${expanded ? 'tw-translate-y-0' : 'is-minimized'} tw-transition-all tw-ease-in tw-duration-200`}
       onClick={expand}
-      onKeyDown={expand}
+      onKeyDown={expandKeyboard}
       role="button"
       tabIndex={0}
     >
@@ -59,11 +65,11 @@ const Messaging: FC = () => {
         <RoundImage imagePath={profileImage} imageWidth="32" alt="Image Felipe Marin" />
         <span className="tw-text-sm tw-font-semibold tw-flex-grow">Messaging</span>
         <section className="tw-flex tw-items-center">
-          {buttonData.map(({ icon, action }) => (
+          {buttonData.map(({ icon, actionMouse }) => (
             <IconButton
               buttonType="button"
               className="tw-p-1 hover:tw-bg-gray-300 tw-rounded-2xl tw-ease-in tw-duration-200"
-              action={action}
+              action={actionMouse}
               key={icon}
             >
               <Icon path={icon} size={1} className="tw-text-gray-600" />
