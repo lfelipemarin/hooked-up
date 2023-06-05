@@ -23,6 +23,7 @@ for (let index = 0; index < 20; index++) {
     date="Mar 16"
     lastMessagePreview="I understand this is a message preview I understand this is a message
     preview I understand this is a message preview I understand this is a message preview"
+    status={index % 3 === 0 ? 'online' : 'away'}
   />);
 }
 

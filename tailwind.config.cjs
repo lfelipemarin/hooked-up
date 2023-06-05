@@ -6,12 +6,15 @@ module.exports = {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
-      maxHeight: {
-        128: '32rem',
-        256: 'calc(100vh - 100px)'
+      borderWidth: {
+        3: '3px'
       },
       flex: {
         50: '1 1 50%'
+      },
+      maxHeight: {
+        128: '32rem',
+        256: 'calc(100vh - 100px)'
       }
     },
     screens: {

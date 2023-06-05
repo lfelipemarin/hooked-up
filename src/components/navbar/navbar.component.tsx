@@ -53,7 +53,7 @@ export interface NavBarProperties {
   className?: string
 }
 
-const NavBar: FC<NavBarProperties> = ({ navItems, className }) => {
+const NavBar: FC<NavBarProperties> = ({ navItems, className = '' }) => {
   const { pathname } = useLocation();
   const [activeItems, setActiveItems] = useState(navItems);
   useEffect(() => {

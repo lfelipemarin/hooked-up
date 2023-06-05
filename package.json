@@ -1,5 +1,6 @@
 {
   "name": "hooked-up",
+  "description": "A simpe drag and drop CV Builder.",
   "private": true,
   "version": "0.0.0",
   "type": "module",

@@ -10,7 +10,7 @@ interface IconButtonProperties {
 }
 
 const IconButton: FC<IconButtonProperties> = ({
-  buttonType, children, className, action
+  buttonType, children, className = '', action
 }) => (
   <button type={buttonType} className={className} onClick={action}>{children}</button>
 );

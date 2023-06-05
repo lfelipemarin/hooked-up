@@ -10,13 +10,15 @@ interface HeaderProperties {
   className?: string
 }
 
-const Header: FC<HeaderProperties> = ({ className }) => (
+const Header: FC<HeaderProperties> = ({ className = '' }) => (
   <header className={`${className}`}>
-    <div className="lg:tw-container xl:tw-px-20 tw-px-2 tw-flex tw-items-center">
+    <div className="xl:tw-px-20 tw-px-2 tw-flex tw-items-center">
       <div className="hu-nav-logo tw-flex">
         <Logo width="24" height="24" />
       </div>
-      <SearchBar />
+      <div className="tw-grow">
+        <SearchBar expandable />
+      </div>
       <NavBar navItems={navItems} />
     </div>
   </header>

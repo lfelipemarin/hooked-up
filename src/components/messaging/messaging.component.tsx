@@ -11,6 +11,7 @@ import {
 } from 'react';
 import IconButton from '../icon-button/icon-button.component';
 import RoundImage from '../round-image/round-image.component';
+import SearchBar from '../search-bar/search-bar.component';
 import './messaging.styles.scss';
 
 interface MessagingProperties {
@@ -21,7 +22,7 @@ interface MessagingProperties {
 }
 
 const Messaging: FC<MessagingProperties> = ({
-  headerImage, title, messageItems, className
+  headerImage, title, messageItems, className = ''
 }) => {
   const [state, setState] = useState(
     {
@@ -43,16 +44,19 @@ const Messaging: FC<MessagingProperties> = ({
   const buttonData = [
     {
       icon: mdiDotsHorizontal,
+      iconSize: 1,
       actionMouse: (): void => { console.log('options'); },
       actionKeyboard: expandKeyboard
     },
     {
       icon: mdiSquareEditOutline,
+      iconSize: 1,
       actionMouse: (): void => { console.log('new message'); },
       actionKeyboard: expandKeyboard
     },
     {
       icon: expanded ? mdiChevronDown : mdiChevronUp,
+      iconSize: 1,
       actionMouse: expand,
       actionKeyboard: expandKeyboard
     }
@@ -81,18 +85,19 @@ const Messaging: FC<MessagingProperties> = ({
           <span className="tw-text-sm tw-font-semibold tw-flex-grow">{title}</span>
         </section>
         <section className="tw-flex tw-items-center">
-          {buttonData.map(({ icon, actionMouse }) => (
+          {buttonData.map(({ icon, iconSize, actionMouse }) => (
             <IconButton
               buttonType="button"
               className="tw-p-1 hover:tw-bg-gray-300 tw-rounded-2xl tw-ease-in tw-duration-200"
               action={actionMouse}
               key={icon}
             >
-              <Icon path={icon} size={1} className="tw-text-gray-600" />
+              <Icon path={icon} size={iconSize} className="tw-text-gray-600" />
             </IconButton>
           ))}
         </section>
       </header>
+      <SearchBar />
       <main className="tw-flex tw-flex-col tw-gap-2 tw-relative tw-overflow-y-auto tw-overflow-x-hidden">
         {messageItems}
       </main>
