@@ -1,0 +1,2 @@
+class ExperienceByCv < ApplicationRecord
+end
