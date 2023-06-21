@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_20_213238) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_21_152741) do
   create_table "cvs", charset: "utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.datetime "created_at", null: false
@@ -19,12 +19,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_20_213238) do
   end
 
   create_table "experience_by_cvs", charset: "utf8", force: :cascade do |t|
-    t.bigint "experiences_id"
-    t.bigint "cvs_id"
+    t.bigint "cv_id"
+    t.bigint "experience_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["cvs_id"], name: "index_experience_by_cvs_on_cvs_id"
-    t.index ["experiences_id"], name: "index_experience_by_cvs_on_experiences_id"
+    t.index ["cv_id"], name: "index_experience_by_cvs_on_cv_id"
+    t.index ["experience_id"], name: "index_experience_by_cvs_on_experience_id"
   end
 
   create_table "experience_types", charset: "utf8", force: :cascade do |t|
@@ -36,10 +36,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_20_213238) do
 
   create_table "experiences", charset: "utf8", force: :cascade do |t|
     t.string "name"
-    t.bigint "experience_types_id"
+    t.text "description", size: :long
+    t.datetime "date_start"
+    t.datetime "date_end"
+    t.bigint "experience_type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["experience_types_id"], name: "index_experiences_on_experience_types_id"
+    t.index ["experience_type_id"], name: "index_experiences_on_experience_type_id"
   end
 
   create_table "summaries", charset: "utf8", force: :cascade do |t|
@@ -76,9 +79,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_20_213238) do
   end
 
   add_foreign_key "cvs", "users"
-  add_foreign_key "experience_by_cvs", "cvs", column: "cvs_id"
-  add_foreign_key "experience_by_cvs", "experiences", column: "experiences_id"
-  add_foreign_key "experiences", "experience_types", column: "experience_types_id"
+  add_foreign_key "experience_by_cvs", "cvs"
+  add_foreign_key "experience_by_cvs", "experiences"
+  add_foreign_key "experiences", "experience_types"
   add_foreign_key "summary_by_cvs", "cvs"
   add_foreign_key "summary_by_cvs", "summaries"
 end
