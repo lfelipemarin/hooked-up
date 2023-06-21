@@ -15,11 +15,11 @@ class CvsController < ApplicationController
 
   def show
     @user_cv = Cv.where(id: params[:cv_id], user_id: params[:user_id])
-    render json: @user_cv, include: [:summaries]
+    render json: @user_cv, include: %i[summaries experiences]
   end
 
   def list
     @user_cvs = Cv.where(user_id: params[:user_id])
-    render json: @user_cvs, include: [:summaries]
+    render json: @user_cvs, include: [:summaries, :experiences, { experiences: { include: :experience_type } }]
   end
 end
