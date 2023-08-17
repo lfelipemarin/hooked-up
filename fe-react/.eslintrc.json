@@ -17,7 +17,7 @@
     },
     "ecmaVersion": 12,
     "sourceType": "module",
-    "project": "./tsconfig.json"
+    "project": "./fe-react/tsconfig.json"
   },
   "plugins": ["react", "@typescript-eslint", "react-hooks", "unicorn"],
   "rules": {
