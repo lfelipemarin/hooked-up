@@ -7,6 +7,7 @@ import profileImage from './assets/my-profile-image.jpeg';
 import Header from './components/header/header.component';
 import UserMessagingItem from './components/messaging/components/user-messaging-item.component';
 import Messaging from './components/messaging/messaging.component';
+import PrivateRoute from './private.route';
 
 const Network = lazy(() => import('./pages/network/network.page'));
 const HomePage = lazy(() => import('./pages/home/home.page'));
@@ -38,7 +39,9 @@ const App: FC = () => (
         <Routes>
           <Route path="/" element={<Navigate to="/login" />} />
           <Route path="login" element={<LoginPage />} />
-          <Route path="home" element={<HomePage />} />
+          {/* <Route path="home" element={<HomePage />} /> */}
+          {/* Using the PrivateRoute for a restricted route */}
+          <Route path="/home" element={<PrivateRoute element={HomePage} path='/restricted' />} />
           <Route path="mynetwork" element={<Network />} />
           <Route path="jobs" element={<JobsPage />} />
           <Route path="messaging" element={<MessagingPage />} />
