@@ -38,7 +38,7 @@ const App: FC = () => (
         <Routes>
           <Route path="/" element={<Navigate to="/login" />} />
           <Route path="login" element={<LoginPage />} />
-          <Route path="/home" element={<PrivateRoute element={HomePage} path='/restricted' />} />
+          <Route path="/home" element={<PrivateRoute element={HomePage} path="/restricted" />} />
           <Route path="mynetwork" element={<Network />} />
           <Route path="jobs" element={<JobsPage />} />
           <Route path="messaging" element={<MessagingPage />} />
