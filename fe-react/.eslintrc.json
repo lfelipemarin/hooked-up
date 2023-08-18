@@ -17,7 +17,7 @@
     },
     "ecmaVersion": 12,
     "sourceType": "module",
-    "project": "./fe-react/tsconfig.json"
+    "project": ["**/tsconfig.json"]
   },
   "plugins": ["react", "@typescript-eslint", "react-hooks", "unicorn"],
   "rules": {
@@ -99,7 +99,8 @@
           "props": true
         }
       }
-    ]
+    ],
+    "unicorn/expiring-todo-comments": "off"
   },
   "settings": {
     "import/resolver": {
