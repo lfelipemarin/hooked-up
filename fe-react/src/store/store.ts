@@ -3,13 +3,11 @@ import thunk from 'redux-thunk';
 
 import { configureStore } from '@reduxjs/toolkit';
 import authReducer from './auth/auth.slice';
-import userReducer from './user/user.slice';
 
 const middleWares = [logger, thunk];
 
 export const store = configureStore({
   reducer: {
-    user: userReducer,
     auth: authReducer
   },
   middleware: (getDefaultMiddleware) =>

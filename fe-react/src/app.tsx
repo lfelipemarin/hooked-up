@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import {
   FC, lazy, ReactNode, Suspense
 } from 'react';
@@ -39,8 +38,6 @@ const App: FC = () => (
         <Routes>
           <Route path="/" element={<Navigate to="/login" />} />
           <Route path="login" element={<LoginPage />} />
-          {/* <Route path="home" element={<HomePage />} /> */}
-          {/* Using the PrivateRoute for a restricted route */}
           <Route path="/home" element={<PrivateRoute element={HomePage} path='/restricted' />} />
           <Route path="mynetwork" element={<Network />} />
           <Route path="jobs" element={<JobsPage />} />
