@@ -82,15 +82,6 @@
       }
     ],
     "no-multiple-empty-lines": "error",
-    "sort-keys": [
-      "warn",
-      "asc",
-      {
-        "caseSensitive": true,
-        "natural": false,
-        "minKeys": 3
-      }
-    ],
     "etc/prefer-interface": "error",
     "unicorn/prevent-abbreviations": [
       "error",
@@ -100,7 +91,10 @@
         }
       }
     ],
-    "unicorn/expiring-todo-comments": "off"
+    "unicorn/expiring-todo-comments": "off",
+    "no-param-reassign": "off",
+    "sort-keys": "off",
+    "operator-linebreak": "off"
   },
   "settings": {
     "import/resolver": {
