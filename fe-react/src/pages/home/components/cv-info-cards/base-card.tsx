@@ -2,6 +2,7 @@
 import { FC, ReactElement } from 'react';
 import HuCard from '../../../../components/hu-card/hu-card.component';
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const BaseCard: FC<{ title?: string, body?: string | ReactElement }> = ({ title, body }) => (
   <HuCard
     cardBody={body}

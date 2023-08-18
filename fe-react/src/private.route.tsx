@@ -5,7 +5,7 @@ const PrivateRoute: FC<{ path: string; element: FC }> = ({
   path,
   element: Element
 }) => {
-  const token = localStorage.getItem('token');
+  const token = localStorage.getItem('appToken');
 
   if (path === '/restricted' && !token) {
     return <Navigate to="/login" />;

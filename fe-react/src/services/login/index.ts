@@ -22,9 +22,5 @@ export const login = async (userLogin: UserLogin): Promise<Response> => {
 
   const response = await fetch('http://localhost:4000/login', requestOptions);
 
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
-  }
-
   return response;
 };
