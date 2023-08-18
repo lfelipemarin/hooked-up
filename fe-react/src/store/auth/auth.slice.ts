@@ -7,7 +7,7 @@ export interface UserState {
   loggedIn: boolean;
   error: string | undefined | null;
   loading: boolean;
-  token: string | null;
+  token: string | undefined | null;
 }
 
 const initialState: UserState = {
@@ -15,7 +15,7 @@ const initialState: UserState = {
   error: undefined,
   loading: false,
   loggedIn: false,
-  token: null
+  token: undefined
 };
 // TODO [2023-12-25]: refactor this code and move it to auth.slice.ts
 export const doLogin = createAsyncThunk<User, UserLogin>(
@@ -42,8 +42,8 @@ const userSlice = createSlice({
     setToken: (state, action: PayloadAction<string | null>) => {
       state.token = action.payload;
       state.loggedIn = !!action.payload;
-      localStorage.setItem("appToken", state.token as string);
-    },
+      localStorage.setItem('appToken', state.token as string);
+    }
   },
   extraReducers: (builder) => {
     builder
