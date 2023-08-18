@@ -1,6 +1,6 @@
-import { User, UserLogin } from '../../store/user/user.type';
+import { UserLogin } from '../../store/user/user.type';
 
-export const login = async (userLogin: UserLogin): Promise<User> => {
+export const login = async (userLogin: UserLogin): Promise<Response> => {
   const { email, password } = userLogin;
   const myHeaders = new Headers();
   myHeaders.append('Content-Type', 'application/json');
@@ -26,7 +26,5 @@ export const login = async (userLogin: UserLogin): Promise<User> => {
     throw new Error(`HTTP error! status: ${response.status}`);
   }
 
-  const jsonResp = await response.json();
-  const user = jsonResp.data;
-  return user;
+  return response;
 };

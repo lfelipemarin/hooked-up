@@ -7,28 +7,45 @@ export interface UserState {
   loggedIn: boolean;
   error: string | undefined | null;
   loading: boolean;
+  token: string | null;
 }
 
 const initialState: UserState = {
   currentUser: undefined,
   error: undefined,
   loading: false,
-  loggedIn: false
+  loggedIn: false,
+  token: null
 };
 
 // Async thunk for fetching data
 export const doLogin = createAsyncThunk<User, UserLogin>(
-  'user/fetchUser',
-  async (user) => {
-    const data = await loginService(user);
-    return data;
+  'user/loginUser',
+  async (user, thunkAPI) => {
+    try {
+      const response = await loginService(user);
+      const token = response.headers.get('Authorization')?.split(' ')[1] ?? null;
+      if (token) {
+        thunkAPI.dispatch(setToken(token));
+      }
+      const currentUser = await response.json();
+      return currentUser.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error);
+    }
   }
 );
 
 const userSlice = createSlice({
   name: 'user',
   initialState,
-  reducers: {},
+  reducers: {
+    setToken: (state, action: PayloadAction<string | null>) => {
+      state.token = action.payload;
+      state.loggedIn = !!action.payload;
+      localStorage.setItem("appToken", state.token as string);
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(doLogin.pending, (state) => {
@@ -36,13 +53,9 @@ const userSlice = createSlice({
         state.error = null;
       })
       .addCase(doLogin.fulfilled, (state, action: PayloadAction<User>) => {
-        console.log('====================================Payload');
-        console.log(action.payload);
-        console.log('====================================');
         state.loading = false;
-        state.currentUser = action.payload; // This line might cause the error
+        state.currentUser = action.payload;
         state.error = null;
-
       })
       .addCase(doLogin.rejected, (state, action) => {
         state.loading = false;
@@ -52,4 +65,5 @@ const userSlice = createSlice({
   }
 });
 
+export const { setToken } = userSlice.actions;
 export default userSlice.reducer;

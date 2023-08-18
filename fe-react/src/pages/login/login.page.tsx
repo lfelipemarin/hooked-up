@@ -1,4 +1,5 @@
 import { FC, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux/hooks';
 import { RootState } from '../../store/store';
 import { doLogin } from '../../store/user/user.slice';
@@ -6,14 +7,15 @@ import { User } from '../../store/user/user.type';
 import './login.styles.scss';
 
 const LoginPage: FC = () => {
-  const a = 0;
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
   const currentUser = useAppSelector((state: RootState) => state.user.currentUser as User);
 
-  const handleLogin = () => {
-    dispatch(doLogin({ email, password }));
+  const handleLogin = async () => {
+    await dispatch(doLogin({ email, password }));
+    navigate('/home');
   };
 
   return (
