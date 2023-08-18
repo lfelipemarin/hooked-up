@@ -26,5 +26,7 @@ export const login = async (userLogin: UserLogin): Promise<User> => {
     throw new Error(`HTTP error! status: ${response.status}`);
   }
 
-  return response.json();
+  const jsonResp = await response.json();
+  const user = jsonResp.data;
+  return user;
 };

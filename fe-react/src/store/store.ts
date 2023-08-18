@@ -2,17 +2,21 @@ import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 
 import { configureStore } from '@reduxjs/toolkit';
-import { rootReducer } from './root-reducer';
+import authReducer from './auth/auth.slice';
+import userReducer from './user/user.slice';
 
 const middleWares = [logger, thunk];
 
 export const store = configureStore({
-  reducer: rootReducer,
+  reducer: {
+    user: userReducer,
+    auth: authReducer
+  },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(middleWares),
   devTools: process.env.NODE_ENV !== 'production'
 });
 
-export type RootState = ReturnType<typeof rootReducer>
+export type RootState = ReturnType<typeof store.getState>;
 // Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
-export type AppDispatch = typeof store.dispatch
+export type AppDispatch = typeof store.dispatch;
