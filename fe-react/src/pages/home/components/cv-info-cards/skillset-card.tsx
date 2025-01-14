@@ -13,6 +13,12 @@ const filteredSkillSet = (skill: string): string => {
     case 'databases': {
       return 'Databases';
     }
+    case 'tools': {
+      return 'Tools';
+    }
+    case 'misc': {
+      return 'Misc Tools';
+    }
     default: {
       return '';
     }
@@ -21,22 +27,23 @@ const filteredSkillSet = (skill: string): string => {
 
 const SkillsetCard: FC<{ title?: string, body: { programmingLanguages: Array<string>, frameworks: Array<string>, databases: Array<string> } }> = ({ title, body }) => {
   const renderSkillset = (): ReactElement => (
-    <div className="tw-flex tw-justify-evenly">
+    <div className="tw-flex tw-justify-evenly tw-flex-wrap">
       {
         Object.keys(body).map((skillKey) => (
-          <div key={skillKey}>
-            <h3>
+          <div key={skillKey} className="tw-flex tw-flex-col tw-flex-1">
+            <h3 className="tw-text-lg tw-font-medium">
               {filteredSkillSet(skillKey)}
             </h3>
             <ul className="tw-list-disc tw-list-inside">
               {body[skillKey as keyof typeof body].map((skill) => (
-                <li key={skill} className="tw-text-sm">{skill}</li>
+                <li key={skill} className="tw-text-sm"><span>{skill}</span></li>
               ))}
             </ul>
           </div>
         ))
       }
     </div>
+
   );
   return (
     <BaseCard body={(

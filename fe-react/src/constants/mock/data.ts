@@ -34,6 +34,8 @@ export interface DataType {
     programmingLanguages: Array<string>;
     frameworks: Array<string>;
     databases: Array<string>;
+    tools: Array<string>;
+    misc: Array<string>;
   };
   careerTitles?: Array<string>;
   work: Array<WorkType>;
@@ -95,16 +97,34 @@ export const cVData: Array<DataType> = [
           'Software Development Java Desktop App - Neurological Clinical Reports'
       },
       {
-        description: `* Web app made with Vue.js, deployed to Firebase and
-        Heroku`,
+        description: `* Web app made with Vue.js, deployed to Firebase.
+        *<a href='https://haz-la-lectio.web.app/' target="_blank">https://haz-la-lectio.web.app/</a>`,
         endDate: '01-01-2021',
         name: 'Personal Venture',
-        projectName: 'Lectio Divina PWA'
+        projectName: 'Haz la Lectio - PWA'
+      },
+      {
+        description: `* Flutter App for religious purposes. Backend made with Firebase.
+        * Github repo: <a href='https://github.com/lfelipemarin/lectio-app' target="_blank">https://github.com/lfelipemarin/lectio-app</a>`,
+        endDate: '01-01-2025',
+        name: 'Personal Venture',
+        projectName: 'Haz la Lectio - app'
+      },
+      {
+        description: `* Web app made with ReactJs.
+        * React and NestJS web app for a non-profit
+        organization to share their businesses between
+        community members.
+        * Front-end Github repo: <a href='https://github.com/Entrelazos/entrelazos-frontend' target="_blank">https://github.com/Entrelazos/entrelazos-frontend</a>
+        * Back-end Github repo: <a href="https://github.com/Entrelazos/nest-entrelazos">https://github.com/Entrelazos/nest-entrelazos</a>`,
+        endDate: '12-01-2024',
+        name: 'Personal Venture',
+        projectName: 'Entrelazos - PWA'
       }
     ],
     phone: '+573014369634',
     skillset: {
-      databases: ['MySQL', 'MongoDB', 'NeDB', 'Redis'],
+      programmingLanguages: ['Java', 'JavaScript', 'Dart', 'HTML', 'CSS'],
       frameworks: [
         'Express.js',
         'Vue.js',
@@ -112,23 +132,17 @@ export const cVData: Array<DataType> = [
         'Spring',
         'Bootstrap',
         'Tailwind',
-        'React.js'
+        'React.js',
+        'Flutter'
       ],
-      programmingLanguages: [
-        'Java',
-        'JavaScript',
-        'Android',
-        'PHP',
-        'Golang',
-        'HTML5',
-        'CSS3'
-      ]
+      databases: ['MySQL', 'MongoDB', 'NeDB', 'Redis'],
+      tools: ['Marketo', 'Eloqua', 'HubsPot', 'Pardot', 'WordPress'],
+      misc: ['Github', 'Apache HTTP Server, Nginx, Apache Tomcat, Heroku, Firebase, RabbitMQ']
     },
-    summary: `Senior Web Developer specializing in front end development. Experienced with all stages of
-      the software developmentlife cycle for dynamic web projects. Well-versed in API development
-      and numerous programming languages including HTML5, Node.js, JavaScript (Vue.js), CSS, MySQL, etc.,
-      under a variety of frameworks. Strong communication skills and solid client requirement gathering,
-      client success and stakeholder management for web development projects.`,
+    summary: `Senior Web Developer specializing in front end development. Experienced in all stages of the software development
+      life cycle for web/mobile projects. Well-versed in API development and numerous programming languages including
+      JavaScript (Vue.js, React.js, Node.js), Dart, CSS, MySQL..., under a variety of frameworks. Strong communication skills
+      and solid client requirement gathering, client success and stakeholder management for web development projects.`,
     work: [
       {
         description: `* Maintenance and enhancement of the VEP (Virtual Events
@@ -234,7 +248,9 @@ export const cVData: Array<DataType> = [
         'Golang',
         'HTML5',
         'CSS3'
-      ]
+      ],
+      tools: ['Marketo', 'Eloqua', 'HubsPot', 'Pardot', 'WordPress'],
+      misc: ['Github', 'Apache HTTP Server, Nginx, Apache Tomcat, Heroku, Firebase, RabbitMQ']
     },
     summary: `Senior Web Developer specializing in front end development. Experienced with all stages of
       the software developmentlife cycle for dynamic web projects. Well-versed in API development
@@ -346,7 +362,9 @@ export const cVData: Array<DataType> = [
         'Golang',
         'HTML5',
         'CSS3'
-      ]
+      ],
+      tools: ['Marketo', 'Eloqua', 'HubsPot', 'Pardot', 'WordPress'],
+      misc: ['Github', 'Apache HTTP Server, Nginx, Apache Tomcat, Heroku, Firebase, RabbitMQ']
     },
     summary: `Senior Web Developer specializing in front end development. Experienced with all stages of
       the software developmentlife cycle for dynamic web projects. Well-versed in API development
@@ -458,7 +476,9 @@ export const cVData: Array<DataType> = [
         'Golang',
         'HTML5',
         'CSS3'
-      ]
+      ],
+      tools: ['Marketo', 'Eloqua', 'HubsPot', 'Pardot', 'WordPress'],
+      misc: ['Github', 'Apache HTTP Server, Nginx, Apache Tomcat, Heroku, Firebase, RabbitMQ']
     },
     summary: `Senior Web Developer specializing in front end development. Experienced with all stages of
       the software developmentlife cycle for dynamic web projects. Well-versed in API development
