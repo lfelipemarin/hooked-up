@@ -8,7 +8,8 @@
     "airbnb",
     "plugin:@typescript-eslint/recommended",
     "plugin:etc/recommended",
-    "plugin:unicorn/recommended"
+    "plugin:unicorn/recommended",
+    "prettier"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {

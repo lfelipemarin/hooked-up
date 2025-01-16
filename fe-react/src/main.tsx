@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import App from './app';
-import './app.scss';
+import './styles/app.scss';
 import { store } from './store/store';
 
 const rootElement = document.querySelector('#root');

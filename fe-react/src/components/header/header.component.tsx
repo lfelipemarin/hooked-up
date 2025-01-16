@@ -7,12 +7,12 @@ import SearchBar from '../search-bar/search-bar.component';
 import './header.styles.scss';
 
 interface HeaderProperties {
-  className?: string
+  className?: string;
 }
 
 const Header: FC<HeaderProperties> = ({ className = '' }) => (
   <header className={`${className}`}>
-    <div className="xl:tw-px-20 tw-px-2 tw-flex tw-items-center">
+    <div className="xl:tw-container xl:tw-px-48 tw-mx-auto tw-px-2 tw-flex tw-items-center">
       <div className="hu-nav-logo tw-flex">
         <Logo width="24" height="24" />
       </div>

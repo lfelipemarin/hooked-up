@@ -1,0 +1,14 @@
+@import './variables';
+
+:root {
+  // Default to light theme
+  --background-color: map-get($light-theme, background-color);
+  --text-color: map-get($light-theme, text-color);
+  --primary-color: map-get($light-theme, primary-color);
+}
+
+[data-theme='dark'] {
+  --background-color: map-get($dark-theme, background-color);
+  --text-color: map-get($dark-theme, text-color);
+  --primary-color: map-get($dark-theme, primary-color);
+}

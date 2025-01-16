@@ -7,11 +7,11 @@
     grid-template-areas:
       'sidebar main'
       '. aside';
-    grid-template-columns: minmax(0, 7fr) minmax(0, 17fr);
+    grid-template-columns: minmax(0, 225px) minmax(0, auto);
   }
   @media (min-width: 992px) {
     grid-template-areas: 'sidebar main aside';
-    grid-template-columns: minmax(0, 5fr) minmax(0, 12fr) minmax(300px, 7fr);
+    grid-template-columns: minmax(0, 225px) minmax(0, auto) minmax(0, 300px);
   }
   // grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   column-gap: 1.5em;
@@ -25,7 +25,6 @@
   }
   .hu-right-aside {
     grid-area: aside;
-    border: 1px solid blue;
   }
   &--2-cols {
     .hu-center-main {

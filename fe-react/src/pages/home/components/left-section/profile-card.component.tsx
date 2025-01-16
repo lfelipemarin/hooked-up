@@ -1,11 +1,11 @@
 /* eslint-disable react/no-unescaped-entities */
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
-import { ReactComponent as BookmarkSvg } from '../../../assets/bookmark.svg';
-import ProfileImage from '../../../assets/my-profile-image.jpeg';
-import { ReactComponent as PremiumSvg } from '../../../assets/premium.svg';
-import HuCard from '../../../components/hu-card/hu-card.component';
-import RoundImage from '../../../components/round-image/round-image.component';
+import { ReactComponent as BookmarkSvg } from '../../../../assets/bookmark.svg';
+import ProfileImage from '../../../../assets/my-profile-image.jpeg';
+import { ReactComponent as PremiumSvg } from '../../../../assets/premium.svg';
+import HuCard from '../../../../components/hu-card/hu-card.component';
+import RoundImage from '../../../../components/round-image/round-image.component';
 import './profile-card.styles.scss';
 
 const CardHeader: FC = () => (
