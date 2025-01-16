@@ -1,6 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
-import { FC, ReactElement, ReactNode } from 'react';
-import { Link } from 'react-router-dom';
+import { FC, ReactElement } from 'react';
 import { ReactComponent as WhatsAppIcon } from '../../../../assets/icons8-whatsapp.svg';
 import HuCard from '../../../../components/hu-card/hu-card.component';
 
@@ -8,17 +7,17 @@ const socialLinks = [
   {
     key: 0,
     text: 'GitHub',
-    to: 'https://github.com/your-profile'
+    to: 'https://github.com/lfelipemarin'
   },
   {
     key: 1,
     text: 'LinkedIn',
-    to: 'https://linkedin.com/in/your-profile'
+    to: 'https://www.linkedin.com/in/fmv85'
   },
   {
     key: 2,
-    text: 'Twitter',
-    to: 'https://twitter.com/your-profile'
+    text: 'Repo for this Project',
+    to: 'https://github.com/lfelipemarin/hooked-up'
   }
 ];
 

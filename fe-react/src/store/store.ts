@@ -13,8 +13,10 @@ export const store = configureStore({
     auth: authReducer,
     theme: themeReducer
   },
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(middleWares),
+  middleware: (getDefaultMiddleware) => [
+    ...getDefaultMiddleware(),
+    ...middleWares
+  ],
   devTools: process.env.NODE_ENV !== 'production'
 });
 
