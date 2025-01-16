@@ -1,14 +1,20 @@
-@import './variables';
+@use './palette';
 
 :root {
-  // Default to light theme
-  --background-color: map-get($light-theme, background-color);
-  --text-color: map-get($light-theme, text-color);
-  --primary-color: map-get($light-theme, primary-color);
+  --background-color: #f4f2ee;
+  --text-color: #000000;
+  --primary-color: #6200ea;
+  --header-bg-color: #ffffff;
+  --header-border-color: #000000;
+  --off-color: #ccc;
+  --card-bg-color: var(--white-a100);
 }
 
 [data-theme='dark'] {
-  --background-color: map-get($dark-theme, background-color);
-  --text-color: map-get($dark-theme, text-color);
-  --primary-color: map-get($dark-theme, primary-color);
+  --background-color: #121212;
+  --text-color: #ffffff;
+  --primary-color: #bb86fc;
+  --header-bg-color: #1b1f23;
+  --off-color: #ccc;
+  --card-bg-color: var(--cool-gray-100);
 }

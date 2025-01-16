@@ -69,8 +69,9 @@ const Messaging: FC<MessagingProperties> = ({
     <div
       className={`hu-messaging hu-card tw-border-b-0 tw-rounded-b-none tw-flex
         tw-flex-col tw-gap-2 tw-fixed tw-bottom-0 tw-right-4 tw-p-2
-        tw-pt-0 tw-bg-white ${expanded ? 'tw-translate-y-0' : 'is-minimized'}
+        tw-pt-0 ${expanded ? 'tw-translate-y-0' : 'is-minimized'}
         tw-transition-all tw-ease-in tw-duration-200 ${className}`}
+      style={{ backgroundColor: 'var(--card-bg-color)' }}
     >
       <header className="tw-flex tw-gap-2 tw-items-center tw-sticky tw-top-0 tw-p-2 tw-cursor-pointer">
         <section

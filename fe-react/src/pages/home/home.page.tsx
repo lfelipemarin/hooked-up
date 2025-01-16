@@ -1,6 +1,6 @@
 import { FC, ReactElement, useState } from 'react';
 import MainLayout from '../main.layout';
-import CommunityCard from './components/community-card.component';
+import CommunityCard from './components/left-section/community-card.component';
 import SummaryCard from './components/cv-info-cards/summary-card';
 import PostCard from './components/post-card.component';
 import ProfileCard from './components/left-section/profile-card.component';
@@ -11,6 +11,7 @@ import ProjectsCard from './components/cv-info-cards/projects-card';
 import SkillsetCard from './components/cv-info-cards/skillset-card';
 import Modal from '../../components/modal/modal.component';
 import CodingInterests from './components/right-section/coding-interests.component';
+import ContactCard from './components/left-section/contact-card.component';
 
 const SectionRight: FC = () => <CodingInterests />;
 
@@ -18,6 +19,7 @@ const SectionLeft = (): ReactElement => (
   <>
     <ProfileCard />
     <CommunityCard />
+    <ContactCard />
   </>
 );
 

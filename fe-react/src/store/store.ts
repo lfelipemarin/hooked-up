@@ -4,14 +4,17 @@ import thunk from 'redux-thunk';
 
 import { configureStore } from '@reduxjs/toolkit';
 import authReducer from './auth/auth.slice';
+import themeReducer from './app/app.slice';
 
 const middleWares = [logger, thunk];
 
 export const store = configureStore({
   reducer: {
-    auth: authReducer
+    auth: authReducer,
+    theme: themeReducer
   },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(middleWares),
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(middleWares),
   devTools: process.env.NODE_ENV !== 'production'
 });
 

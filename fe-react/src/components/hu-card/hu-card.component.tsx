@@ -15,7 +15,10 @@ const HuCard: FC<CardProperties> = ({
   cardFooter,
   className = ''
 }) => (
-  <div className={`hu-card tw-border-none tw-p-0 tw-m-0 ${className}`}>
+  <div
+    className={`hu-card tw-border-none tw-p-0 tw-m-0 ${className}`}
+    style={{ backgroundColor: 'var(--card-bg-color)' }}
+  >
     {cardHeader}
     {cardBody}
     {cardFooter}

@@ -11,11 +11,20 @@ import './profile-card.styles.scss';
 const CardHeader: FC = () => (
   <header className="hu-profile-card-header hu-profile-info tw-p-3">
     <div className="bg-section tw-bg-cover tw-bg-center" />
-    <Link to="/me" className="tw-block hover:tw-underline hover:tw-text-purple-500">
+    <Link
+      to="/me"
+      className="tw-block hover:tw-underline hover:tw-text-purple-500"
+    >
       <div className="profile-pic-section tw-p-0 tw-m-0">
-        <RoundImage imagePath={ProfileImage} alt="Profile Image" border="2px solid white" />
+        <RoundImage
+          imagePath={ProfileImage}
+          alt="Profile Image"
+          border="2px solid white"
+        />
       </div>
-      <div className="tw-text-black tw-font-bold tw-mx-auto tw-text-center">Felipe Marin Velasquez</div>
+      <div className="tw-font-bold tw-mx-auto tw-text-center">
+        Felipe Marin Velasquez
+      </div>
     </Link>
   </header>
 );
@@ -26,7 +35,9 @@ const CardBody: FC = () => (
         <Link to="/me" className="tw-text-xs tw-font-semibold">
           <div className="tw-flex">
             <div className="tw-flex-grow">
-              <span className="tw-text-gray-600">Who's viewed your profile</span>
+              <span className="tw-text-gray-600">
+                Who's viewed your profile
+              </span>
             </div>
             <div>
               <span className="tw-text-blue-600">19</span>
@@ -52,7 +63,9 @@ const CardBody: FC = () => (
 const CardFooter: FC = () => (
   <footer className="hu-profile-card-footer tw-flex tw-flex-col tw-text-xs">
     <Link to="/premium" className="hover:tw-text-blue-600 tw-p-3">
-      <span className="tw-text-gray-600">Access exclusive tools & insights</span>
+      <span className="tw-text-gray-600">
+        Access exclusive tools & insights
+      </span>
       <div className="tw-flex tw-items-center tw-gap-1">
         <PremiumSvg width="16" height="16" />
         <span className="tw-underline tw-font-bold">Try Premium for free</span>
@@ -68,6 +81,10 @@ const CardFooter: FC = () => (
 );
 
 const ProfileCard: FC = () => (
-  <HuCard cardHeader={<CardHeader />} cardBody={<CardBody />} cardFooter={<CardFooter />} />
+  <HuCard
+    cardHeader={<CardHeader />}
+    cardBody={<CardBody />}
+    cardFooter={<CardFooter />}
+  />
 );
 export default ProfileCard;

@@ -1,3 +1,4 @@
+@use './theme';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -24,8 +25,6 @@ $base-color-d: #4d4a4b;
 ::after {
   --hu-icon-text-active-color: $base-color-d;
 }
-
-@import './theme';
 
 body {
   background-color: var(--background-color);
