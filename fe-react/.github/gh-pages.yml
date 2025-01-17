@@ -1,9 +1,9 @@
-name: Deploy fe-react to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
-      - main # Trigger on pushes to the main branch
+      - main # Trigger deployment on push to the main branch
 
 jobs:
   deploy:
@@ -11,25 +11,31 @@ jobs:
 
     steps:
       # Step 1: Checkout the repository
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v3
 
       # Step 2: Set up Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16 # Use the Node.js version required for your project
+          node-version: 20 # Use Node.js 16 (adjust if needed)
 
-      # Step 3: Install dependencies and build the React project
-      - name: Install and build fe-react
-        working-directory: ./fe-react # Ensure the workflow operates in the fe-react folder
+      # Step 3: Navigate to the fe-react folder and install dependencies
+      - name: Install dependencies
         run: |
+          cd fe-react
           npm install
-          npm run build
 
-      # Step 4: Deploy the build directory to GitHub Pages
+      # Step 4: Build the React app
+      - name: Build project
+        run: |
+          cd fe-react
+          npm run build
+          touch dist/.nojekyll
+
+      # Step 5: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./fe-react/dist # Deploy only the build folder
+          publish_dir: ./fe-react/dist # Path to the build directory
