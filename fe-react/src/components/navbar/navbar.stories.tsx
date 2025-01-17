@@ -1,6 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { withRouter } from 'storybook-addon-react-router-v6';
+// import { withRouter } from 'storybook-addon-react-router-v6';
 
 import NavBar from './navbar.component';
 
@@ -8,7 +8,7 @@ import { navItems } from '../../constants';
 
 export default {
   component: NavBar,
-  decorators: [withRouter],
+  // decorators: [withRouter],
   title: 'Example/Navigation Bar'
 } as ComponentMeta<typeof NavBar>;
 

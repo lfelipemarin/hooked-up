@@ -1,13 +1,13 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { withRouter } from 'storybook-addon-react-router-v6';
+// import { withRouter } from 'storybook-addon-react-router-v6';
 
 import { ReactComponent as Logo } from '../../assets/react.svg';
 import IconText from './icon-text.component';
 
 export default {
   component: IconText,
-  decorators: [withRouter],
+  // decorators: [withRouter],
   title: 'Example/Icon Button'
 } as ComponentMeta<typeof IconText>;
 

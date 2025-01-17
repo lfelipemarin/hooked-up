@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { FC, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux/hooks';
@@ -13,7 +14,7 @@ const LoginPage: FC = () => {
   const currentUser = useAppSelector((state: RootState) => state.auth.currentUser);
 
   const handleLogin = async (): Promise<void> => {
-    await dispatch(doLogin({ email, password }));
+    // await dispatch(doLogin({ email, password }));
     navigate('/home');
   };
 
