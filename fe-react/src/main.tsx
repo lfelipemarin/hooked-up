@@ -13,7 +13,7 @@ if (rootElement) {
   ReactDOM.createRoot(rootElement).render(
     <React.StrictMode>
       <Provider store={store}>
-        <BrowserRouter>
+        <BrowserRouter basename='/hooked-up'>
           <App />
         </BrowserRouter>
       </Provider>
