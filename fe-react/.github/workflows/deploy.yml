@@ -3,14 +3,14 @@ name: Deploy Vite React App to GitHub Pages
 on:
   push:
     branches:
-      - main # Trigger on push to the main branch
+      - main # Trigger workflow on pushes to the main branch
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout code
+      # Step 1: Checkout the repository
       - name: Checkout code
         uses: actions/checkout@v3
 
@@ -18,7 +18,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 16 # Adjust the version as needed
 
       # Step 3: Install dependencies
       - name: Install dependencies
