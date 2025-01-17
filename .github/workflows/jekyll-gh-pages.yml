@@ -32,11 +32,11 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build React app
-        run: npm run build
+      - name: Install and build fe-react
+        working-directory: ./fe-react # Ensure the workflow operates in the fe-react folder
+        run: |
+          npm install
+          npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
