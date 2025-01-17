@@ -41,7 +41,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist # Adjust to your React build output folder (default: build for CRA)
+          path: ./fe-react/dist # Adjust to your React build output folder (default: build for CRA)
 
   # Deployment job
   deploy:
