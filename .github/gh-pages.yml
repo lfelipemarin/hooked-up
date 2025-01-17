@@ -31,6 +31,7 @@ jobs:
         run: |
           cd fe-react
           npm run build
+          touch build/.nojekyll
 
       # Step 5: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
