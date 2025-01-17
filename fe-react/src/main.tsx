@@ -2,7 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter as Router } from 'react-router-dom';
 import App from './app';
 import './styles/app.scss';
 import { store } from './store/store';
@@ -13,9 +13,9 @@ if (rootElement) {
   ReactDOM.createRoot(rootElement).render(
     <React.StrictMode>
       <Provider store={store}>
-        <BrowserRouter basename='/hooked-up'>
+        <Router>
           <App />
-        </BrowserRouter>
+        </Router>
       </Provider>
     </React.StrictMode>
   );

@@ -48,10 +48,10 @@ const App: FC = () => {
             {/* <Route path="/home" element={<PrivateRoute element={HomePage} path="/restricted" />} /> */}
             <Route path="/home" element={<HomePage />} />
             <Route path="/me" element={<MePage />} />
-            <Route path="mynetwork" element={<Network />} />
-            <Route path="jobs" element={<JobsPage />} />
-            <Route path="messaging" element={<MessagingPage />} />
-            <Route path="notifications" element={<NotificationsPage />} />
+            <Route path="/mynetwork" element={<Network />} />
+            <Route path="/jobs" element={<JobsPage />} />
+            <Route path="/messaging" element={<MessagingPage />} />
+            <Route path="/notifications" element={<NotificationsPage />} />
             <Route
               path="*"
               element={
