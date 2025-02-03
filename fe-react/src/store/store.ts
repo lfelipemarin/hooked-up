@@ -5,13 +5,15 @@ import thunk from 'redux-thunk';
 import { configureStore } from '@reduxjs/toolkit';
 import authReducer from './auth/auth.slice';
 import themeReducer from './app/app.slice';
+import navbarReducer from './navbar/navbar.slice'
 
 const middleWares = [logger, thunk];
 
 export const store = configureStore({
   reducer: {
     auth: authReducer,
-    theme: themeReducer
+    theme: themeReducer,
+    navBar: navbarReducer
   },
   middleware: (getDefaultMiddleware) => [
     ...getDefaultMiddleware(),

@@ -1,11 +1,14 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/require-default-props */
 import {
-  FC, Key, MouseEvent, SVGProps, useEffect, useState
+  FC, MouseEvent, SVGProps, useEffect, useState
 } from 'react';
 import { useLocation } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 import IconText from '../icon/icon-text.component';
 import './navbar.styles.scss';
+import { RootState } from '../../store/store';
+import { setActiveItem } from '../../store/navbar/navbar.slice';
 
 export interface Style {
   width: string,
@@ -16,11 +19,11 @@ export interface IconTextProperties {
   /**
    * The id of the element
    */
-  id: Key
+  id: number
   /**
   * Icon in SVG format
   */
-  Icon: FC<SVGProps<SVGSVGElement>>
+  iconKey: string
   /**
    * Description text
    */
@@ -42,35 +45,34 @@ export interface IconTextProperties {
    * Active class
    */
   isActive?: boolean
-  onClick?: (id: Key, event_: MouseEvent) => void
+  onClick?: (id: number, event_: MouseEvent) => void
 }
 
 export interface NavBarProperties {
   /**
    * NavBar items
    */
-  navItems: IconTextProperties[],
+  // navItems: IconTextProperties[],
   className?: string
 }
 
-const NavBar: FC<NavBarProperties> = ({ navItems, className = '' }) => {
+const NavBar: FC<NavBarProperties> = ({ className = '' }) => {
+  const dispatch = useDispatch();
   const { pathname } = useLocation();
-  const [activeItems, setActiveItems] = useState(navItems);
+  const navItems = useSelector((state: RootState) => state.navBar.items)
   useEffect(() => {
-    const items = [...activeItems];
-    // eslint-disable-next-line no-restricted-syntax
-    for (const item of items) {
-      item.isActive = item.link === pathname;
+    const activeItem = navItems.find((item) => item.link === pathname)
+    if (activeItem) {
+      dispatch(setActiveItem(activeItem.id))
     }
-    setActiveItems(items);
-  }, [pathname]);
+  }, [pathname, dispatch])
   return (
     <ul className={`tw-flex ${className}`}>
-      {activeItems.map((navItem) => (
+      {navItems.map((navItem) => (
         <li key={navItem.id}>
           <IconText
             id={navItem.id}
-            Icon={navItem.Icon}
+            iconKey={navItem.iconKey}
             isActive={navItem.isActive}
             link={navItem.link}
             text={navItem.text}

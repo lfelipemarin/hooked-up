@@ -1,11 +1,4 @@
 import { IconTextProperties } from '../../components/navbar/navbar.component';
-import { ReactComponent as Icon1 } from '../../stories/assets/code-brackets.svg';
-import { ReactComponent as Icon2 } from '../../stories/assets/colors.svg';
-import { ReactComponent as Icon3 } from '../../stories/assets/comments.svg';
-import { ReactComponent as Icon4 } from '../../stories/assets/direction.svg';
-import { ReactComponent as Icon5 } from '../../stories/assets/flow.svg';
-import { ReactComponent as Icon6 } from '../../stories/assets/plugin.svg';
-import { ReactComponent as Icon7 } from '../../stories/assets/repo.svg';
 
 import { ReactComponent as IconArticle } from '../../assets/article.svg';
 import { ReactComponent as IconJob } from '../../assets/job.svg';
@@ -14,7 +7,7 @@ import { ReactComponent as IconVideo } from '../../assets/video.svg';
 
 export const navItems: IconTextProperties[] = [
   {
-    Icon: Icon1,
+    iconKey: 'codeBrackets',
     id: 1,
     isActive: true,
     link: '/home',
@@ -22,7 +15,7 @@ export const navItems: IconTextProperties[] = [
     text: 'Home'
   },
   {
-    Icon: Icon2,
+    iconKey: 'colors',
     id: 2,
     isActive: false,
     link: '/mynetwork',
@@ -30,35 +23,35 @@ export const navItems: IconTextProperties[] = [
     text: 'My Network'
   },
   {
-    Icon: Icon3,
+    iconKey: 'comments',
     id: 3,
     isActive: false,
     link: '/jobs',
     text: 'Jobs'
   },
   {
-    Icon: Icon4,
+    iconKey: 'direction',
     id: 4,
     isActive: false,
     link: '/messaging',
     text: 'Messaging'
   },
   {
-    Icon: Icon5,
+    iconKey: 'flow',
     id: 5,
     isActive: false,
     link: '/notifications',
     text: 'Notifications'
   },
   {
-    Icon: Icon6,
+    iconKey: 'plugin',
     id: 6,
     isActive: false,
     link: '/me',
     text: 'Me'
   },
   {
-    Icon: Icon7,
+    iconKey: 'repo',
     id: 7,
     isActive: false,
     link: '/work',

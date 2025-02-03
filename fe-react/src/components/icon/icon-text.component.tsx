@@ -7,13 +7,14 @@ import { Link } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 import { IconTextProperties } from '../navbar/navbar.component';
 import './icon-text.styles.scss';
+import { iconMap } from '../../utils/icon-map';
 
 /**
  * Icon with text description
 */
 const IconText: FC<IconTextProperties> = ({
   id,
-  Icon,
+  iconKey,
   text = 'test',
   link = '',
   target = '_self',
@@ -29,6 +30,7 @@ const IconText: FC<IconTextProperties> = ({
   }, []);
   const { width, height } = style;
   const nodeReference = useRef(null);
+  const IconComponent = iconMap[iconKey];
   return (
     <div className="hu-icon-text" onClick={(event_) => onClick?.(id, event_)} role="button" tabIndex={id as number} aria-hidden>
       <Link
@@ -36,7 +38,7 @@ const IconText: FC<IconTextProperties> = ({
         className="tw-flex tw-flex-col tw-w-fit tw-justify-center tw-items-center"
         target={target}
       >
-        <Icon
+        <IconComponent
           className="tw-max-w-xs"
           width={width}
           height={height}
